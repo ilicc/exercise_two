@@ -1,0 +1,29 @@
+/**
+ * copyright by Marszałkiewicz Konrad http://pixelhe.art/ 2018
+ */
+mat-card{
+    width: 80%;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+    transition: transform .3s;
+}
+
+img{
+    height: 225px;
+}
+
+.beer-name{
+    color: #FDC22A;
+    margin: 0;
+}
+
+.beer-tagline{
+    color: #B6B6B6;
+    margin: 0;
+}
+
+mat-card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

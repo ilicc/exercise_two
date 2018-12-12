@@ -1,0 +1,26 @@
+<!-- /**
+ * copyright by Marszałkiewicz Konrad http://pixelhe.art/ 2018
+ */-->
+  <br />
+  <h1 class="title-beer">BEER<span class="title-guru">GURU</span></h1>
+  <div class="button-wraper">
+    <button mat-raised-button color="accent" (click)="filterBeerList('6', beerList)"> < 6% </button>
+    <button mat-raised-button color="accent" (click)="filterBeerList('6-13', beerList)"> 6% - 13% </button>
+    <button mat-raised-button color="accent" (click)="filterBeerList('13', beerList)"> 13% < </button>
+    <button mat-raised-button color="accent" (click)="filterBeerList('all', beerList)"> All </button>
+</div>
+  <br />
+  <mat-spinner *ngIf="beerList.length === 0" color='accent'></mat-spinner>
+  <div class="wrapper">
+    <app-beer-list-element
+      *ngFor="let beer of filteredBeerList"
+      [beer]="beer"
+      showTagline="list"
+      (click)="openBeerDetails(beer)"
+    ></app-beer-list-element>
+  </div>
+  <br />
+  <mat-spinner *ngIf="!isDataLoaded" class="more-beers" color='accent'></mat-spinner>
+  <div class="wraper-no-more">
+    <h3 *ngIf="isDataDownloaded" class="no-more">No more beers to show</h3>
+  </div>

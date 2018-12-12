@@ -1,0 +1,48 @@
+<!-- /**
+ * copyright by Marszałkiewicz Konrad http://pixelhe.art/ 2018
+ */-->
+<mat-dialog-content>
+  <div class="beer-details-wraper">
+    <div class="wraper-beer-img"><img [src]="beer.image_url" /></div>
+    <div class="wraper-beer-content">
+      <h2 class="beer-name">{{ beer.name }}</h2>
+      <p class="beer-tagline">{{ beer.tagline }}</p>
+      <div class="title-divider"></div>
+      <div class="wraper-beer-procentage">
+        <p class="beer-procentage">
+          <span class="beer-procentage-name">IBU:</span> {{ beer.ibu }}
+        </p>
+        <p class="beer-procentage">
+          <span class="beer-procentage-name">ABV:</span> {{ beer.abv }}
+        </p>
+        <p class="beer-procentage">
+          <span class="beer-procentage-name">EBC:</span> {{ beer.ebc }}
+        </p>
+      </div>
+      <div class="beer-description">
+        <p>{{ beer.description }}</p>
+      </div>
+      <h3 class="beer-list-name">Best served with:</h3>
+      <ul>
+        <li *ngFor="let option of beer.food_pairing">{{ option }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="beer-suggestion">
+    <h3 class="beer-suggestion-name">You might also like:</h3>
+    <div class="beer-suggested-wrapper" *ngIf="similarBeerList.length > 0">
+      <app-beer-list-element
+        *ngFor="let suggestedBeer of similarBeerList"
+        [beer]="suggestedBeer"
+        showTagline="details"
+        (click)="goToSuggestedBeer(suggestedBeer)"
+      ></app-beer-list-element>
+    </div>
+    <mat-spinner
+      *ngIf="!isDataLoaded"
+      class="more-beers"
+      color="accent"
+    ></mat-spinner>
+    <br />
+  </div>
+</mat-dialog-content>

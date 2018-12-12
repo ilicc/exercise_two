@@ -1,0 +1,13 @@
+<!-- /**
+ * copyright by Marszałkiewicz Konrad http://pixelhe.art/ 2018
+ */-->
+<mat-card>
+  <mat-card-content><img [src]="beer.image_url"/></mat-card-content>
+  <mat-card-footer>
+    <h3 class="beer-name">{{ beer.name }}</h3>
+    <p class="beer-tagline" *ngIf="showTagline === 'list'">
+      {{ beer.tagline }}
+    </p>
+  </mat-card-footer>
+  <mat-card-footer> </mat-card-footer>
+</mat-card>

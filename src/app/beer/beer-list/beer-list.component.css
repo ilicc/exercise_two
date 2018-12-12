@@ -1,0 +1,79 @@
+/**
+ * copyright by Marszałkiewicz Konrad http://pixelhe.art/ 2018
+ */
+.wrapper {
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 2em;
+    grid-column-gap: 1em;
+}
+
+mat-spinner{
+    margin: auto;
+    width: 100%;
+}
+
+.title-beer{
+    color: #FDC22A;
+    margin-left: 1em;
+}
+
+.title-guru{
+    color: #737373;
+}
+
+.no-more{
+    color: #737373;
+    margin: 25px auto 50px auto;
+}
+
+.wraper-no-more{
+    width: 100%;
+    text-align: center;
+}
+
+.more-beers{
+    margin: 25px auto 50px auto;
+}
+
+.pop-up-info{
+    background: rgb(255, 215, 64, 0.8);
+    border: 3px solid rgb(255, 215, 64);
+    color: #ffffff;
+    margin-bottom: 88px;
+}
+
+.button-wraper{
+    display: flex; 
+    justify-content: flex-end
+}
+
+button{
+    margin-left: 15px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
